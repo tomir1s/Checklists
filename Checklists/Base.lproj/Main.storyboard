@@ -47,6 +47,7 @@
                                     <outlet property="iconView" destination="wCG-Jv-Y4W" id="ebh-b0-7a0"/>
                                     <outlet property="subtitleLabel" destination="ci1-z1-jbs" id="CJb-R0-ccG"/>
                                     <outlet property="titleLabel" destination="tQU-iC-CgK" id="A8A-p5-bAy"/>
+                                    <segue destination="eAX-vd-MxH" kind="show" identifier="MainToGroupDetails" id="pTS-rG-H3z"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -61,7 +62,7 @@
             </objects>
             <point key="canvasLocation" x="1260.8695652173915" y="31.473214285714285"/>
         </scene>
-        <!--Group Details Table View Controller-->
+        <!--Birthdays-->
         <scene sceneID="TTs-vf-LSe">
             <objects>
                 <tableViewController id="eAX-vd-MxH" customClass="GroupDetailsTableViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,6 +104,7 @@
                                     <outlet property="chevronRightView" destination="6Zi-Dv-1ce" id="chL-wB-qgo"/>
                                     <outlet property="infoCircleView" destination="vVh-wO-hJv" id="nsa-eG-O6a"/>
                                     <outlet property="titleLabel" destination="C5n-W2-k0s" id="YD7-l8-dIG"/>
+                                    <segue destination="EPb-O1-b04" kind="show" identifier="GroupDetailsToAddItem" id="76P-d7-wEm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -111,6 +113,7 @@
                             <outlet property="delegate" destination="eAX-vd-MxH" id="7k8-ap-QVI"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Birthdays" largeTitleDisplayMode="never" id="eov-ct-0qu"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ja-qv-5kr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -227,6 +230,7 @@
                             <outlet property="delegate" destination="EPb-O1-b04" id="aC8-1h-Uf9"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="a7Q-V2-tnV"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtY-Kr-VQY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

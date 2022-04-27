@@ -10,10 +10,10 @@ import UIKit
 class MainViewController: UITableViewController {
 
     let groups: [ChecklistGroup] = [
-        ChecklistGroup(title: "Birthdays", imageName: "Birthdays"),
-        ChecklistGroup(title: "Groceries", imageName: "Groceries"),
-        ChecklistGroup(title: "To Do", imageName: "Inbox"),
-        ChecklistGroup(title: "Business stuff", imageName: "Folder")
+        ChecklistGroup(title: "Birthdays", imageName: "Birthdays", items: [ChecklistItem(isChecked: true, name: "Tim's Birthday")]),
+        ChecklistGroup(title: "Groceries", imageName: "Groceries", items: [ChecklistItem(isChecked: false, name: "Buy milk and cookies")]),
+        ChecklistGroup(title: "To Do", imageName: "Inbox", items: [ChecklistItem(isChecked: true, name: "Walk the dog")]),
+        ChecklistGroup(title: "Business stuff", imageName: "Folder", items: [ChecklistItem(isChecked: false, name:"Business")])
     ]
 
     
@@ -33,6 +33,16 @@ class MainViewController: UITableViewController {
         cell.titleLabel.text = group.title
         cell.iconView.image = UIImage(named: group.imageName)
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MainToGroupDetails",
+        let vc = segue.destination as? GroupDetailsTableViewController,
+        let indexPath = tableView.indexPathForSelectedRow {
+         vc.items = groups[indexPath.row].items
+                }
+              
+            
     }
 }
 
