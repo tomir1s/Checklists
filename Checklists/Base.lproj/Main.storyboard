@@ -113,13 +113,19 @@
                             <outlet property="delegate" destination="eAX-vd-MxH" id="7k8-ap-QVI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Birthdays" largeTitleDisplayMode="never" id="eov-ct-0qu"/>
+                    <navigationItem key="navigationItem" title="Birthdays" largeTitleDisplayMode="never" id="eov-ct-0qu">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Jh9-Uf-U3q">
+                            <connections>
+                                <segue destination="EPb-O1-b04" kind="show" id="H8b-Em-4DR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ja-qv-5kr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2147.826086956522" y="30.803571428571427"/>
         </scene>
-        <!--Add Item Table View Controller-->
+        <!--Add Item-->
         <scene sceneID="ipd-As-OKs">
             <objects>
                 <tableViewController id="EPb-O1-b04" customClass="AddItemTableViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
@@ -230,7 +236,7 @@
                             <outlet property="delegate" destination="EPb-O1-b04" id="aC8-1h-Uf9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="a7Q-V2-tnV"/>
+                    <navigationItem key="navigationItem" title="Add Item" largeTitleDisplayMode="never" id="a7Q-V2-tnV"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtY-Kr-VQY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -255,11 +261,15 @@
             <point key="canvasLocation" x="350.72463768115944" y="31.473214285714285"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="76P-d7-wEm"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Birthdays" width="36" height="36"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

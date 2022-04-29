@@ -39,10 +39,9 @@ class MainViewController: UITableViewController {
         if segue.identifier == "MainToGroupDetails",
         let vc = segue.destination as? GroupDetailsTableViewController,
         let indexPath = tableView.indexPathForSelectedRow {
-         vc.items = groups[indexPath.row].items
+        vc.title = groups[indexPath.row].title
+        vc.items = groups[indexPath.row].items
                 }
-              
-            
-    }
+     }
 }
 
