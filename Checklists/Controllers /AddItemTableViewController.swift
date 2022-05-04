@@ -51,6 +51,11 @@ class AddItemTableViewController: UITableViewController {
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SwitchCell", for: indexPath) as! SwitchTableViewCell
             cell.switchRemind.setOn(item?.remindMe ?? false, animated: true)
+            cell.onSwitchChange = { [weak self] in
+                print("я внутри клоужера")
+                self?.item?.remindMe = cell.switchRemind.isOn
+                tableView.reloadData()
+            }
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath) as! DateTableViewCell
