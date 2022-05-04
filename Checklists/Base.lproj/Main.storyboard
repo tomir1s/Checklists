@@ -176,6 +176,9 @@
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oPX-gw-vmm">
                                             <rect key="frame" x="329" y="19" width="51" height="29"/>
+                                            <connections>
+                                                <action selector="switchDidChange:" destination="Kmd-bK-VsJ" eventType="valueChanged" id="dcD-71-b1j"/>
+                                            </connections>
                                         </switch>
                                     </subviews>
                                     <constraints>
@@ -187,7 +190,6 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="labelRemindMe" destination="8c1-mg-pzn" id="Ao8-2Y-r6d"/>
                                     <outlet property="switchRemind" destination="oPX-gw-vmm" id="o7f-jr-rU7"/>
                                 </connections>
                             </tableViewCell>

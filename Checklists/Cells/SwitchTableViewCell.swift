@@ -9,7 +9,7 @@ import UIKit
 
 class SwitchTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var labelRemindMe: UILabel!
+   
     @IBOutlet weak var switchRemind: UISwitch!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,5 +21,7 @@ class SwitchTableViewCell: UITableViewCell {
 
        
     }
-
+    @IBAction func switchDidChange(_ sender: UISwitch) {
+        print("switch value: \(sender.isOn)")
+    }
 }
