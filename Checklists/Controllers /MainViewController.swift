@@ -13,7 +13,7 @@ class MainViewController: UITableViewController {
         ChecklistGroup(title: "Birthdays", imageName: "Birthdays",items: [ChecklistItem(isChecked: true, name: "Tim's Birthday", remindMe: true, dueDate: Date())]),
         ChecklistGroup(title: "Groceries", imageName: "Groceries", items: [ChecklistItem(isChecked: false, name: "Buy milk and cookies", remindMe: false, dueDate: nil)]),
         ChecklistGroup(title: "To Do", imageName: "Inbox", items: [ChecklistItem(isChecked: true, name: "Walk the dog", remindMe: true, dueDate: Date())]),
-        ChecklistGroup(title: "Business stuff", imageName: "Folder", items: [ChecklistItem(isChecked: false, name:"Business", remindMe: false, dueDate: nil)])
+        ChecklistGroup(title: "Business stuff", imageName: "Folder", items: [])
     ]
 
     
@@ -32,6 +32,7 @@ class MainViewController: UITableViewController {
        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupTableViewCell
         cell.titleLabel.text = group.title
         cell.iconView.image = UIImage(named: group.imageName)
+        cell.subtitleLabel.text = group.getReaminings()
         return cell
     }
     
