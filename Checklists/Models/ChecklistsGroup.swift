@@ -21,7 +21,6 @@ struct ChecklistGroup {
                 isAllDone = false
             }
         }
-     
         // 3. (No items)
         if items.isEmpty {
             return "(No items)"
