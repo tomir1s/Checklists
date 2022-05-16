@@ -32,9 +32,19 @@ class MainViewController: UITableViewController, GroupDetailsProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // follow to notification about creating notes
+        NotificationCenter.default.addObserver(self, selector: #selector(handleAddNoteNotification), name: .noteHasBeenCreated, object: nil)
     }
-
+    
+    @objc
+    func handleAddNoteNotification(_ notification: Notification) {
+        if let object = notification.object as? Int{
+        print("Обрабатываю добавление новой заметки")
+        print("Получил значение: \(object)")
+        }
+    }
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return groups.count
     }

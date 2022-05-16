@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC1F76D928327B8C006890B8 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F76D828327B8C006890B8 /* Notifications.swift */; };
 		DC24B755282E8DFB00D31752 /* GroupDetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC24B754282E8DFB00D31752 /* GroupDetailsProtocol.swift */; };
 		DC25900428099D390089C337 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC25900328099D390089C337 /* AppDelegate.swift */; };
 		DC25900628099D390089C337 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC25900528099D390089C337 /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC1F76D828327B8C006890B8 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		DC24B754282E8DFB00D31752 /* GroupDetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsProtocol.swift; sourceTree = "<group>"; };
 		DC25900028099D380089C337 /* Checklists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC25900328099D390089C337 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC1F76D728327B3D006890B8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DC1F76D828327B8C006890B8 /* Notifications.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		DC24B753282E8D7800D31752 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 		DC25900228099D380089C337 /* Checklists */ = {
 			isa = PBXGroup;
 			children = (
+				DC1F76D728327B3D006890B8 /* Extensions */,
 				DC24B753282E8D7800D31752 /* Protocols */,
 				DCB215D52812C8D300209B56 /* Controllers  */,
 				DC936C092810399400A9B094 /* Cells */,
@@ -208,6 +219,7 @@
 				DC24B755282E8DFB00D31752 /* GroupDetailsProtocol.swift in Sources */,
 				DCB215DB2812CE0600209B56 /* ChecklistItem.swift in Sources */,
 				DC76E0DF2816C15C00448FD6 /* TextFieldTableViewCell.swift in Sources */,
+				DC1F76D928327B8C006890B8 /* Notifications.swift in Sources */,
 				DC76E0E12816C17A00448FD6 /* SwitchTableViewCell.swift in Sources */,
 				DC76E0E52816C27B00448FD6 /* AddItemTableViewController.swift in Sources */,
 				DC25900628099D390089C337 /* SceneDelegate.swift in Sources */,
