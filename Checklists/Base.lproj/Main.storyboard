@@ -150,6 +150,9 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="didTextFieldChange:" destination="eWl-w9-D01" eventType="editingChanged" id="igH-QE-ah6"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <constraints>

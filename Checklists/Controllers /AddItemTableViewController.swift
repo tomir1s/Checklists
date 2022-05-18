@@ -11,6 +11,9 @@ class AddItemTableViewController: UITableViewController {
     
     
     var item: ChecklistItem?
+    var textFieldValue: String = ""
+    var switchValue: Bool = false
+    var dueDateValue: Date?
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -69,9 +72,14 @@ class AddItemTableViewController: UITableViewController {
     }
     
     @IBAction func didTapDoneButton(_ sender: Any) {
-        NotificationCenter.default.post(name: .noteHasBeenCreated, object: 42)
+        let newItem = ChecklistItem(isChecked: false, name: textFieldValue, remindMe: switchValue, dueDate: dueDateValue)
+        let object: (ChecklistItem, String) = (newItem, "Birthdays")
+        NotificationCenter.default.post(name: .noteHasBeenCreated, object: object)
     }
-    
+    // create object - тип объекта Tuple: (ChecklistItem, String)
+    // заполнить объект - забрать y ячеек их значения
+    // передать через нотификацию при нажатии на кнопочку "Done" - ChecklistItem
+    // обработать данные на первом экране - 
 }
 
 

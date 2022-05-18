@@ -20,4 +20,7 @@ class TextFieldTableViewCell: UITableViewCell {
 
     }
 
+    @IBAction func didTextFieldChange(_ sender: UITextField) {
+        print(sender.text)
+    }
 }

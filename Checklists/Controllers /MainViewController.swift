@@ -38,9 +38,9 @@ class MainViewController: UITableViewController, GroupDetailsProtocol {
     
     @objc
     func handleAddNoteNotification(_ notification: Notification) {
-        if let object = notification.object as? Int{
+        if let object = notification.object as? (ChecklistItem, String) {
         print("Обрабатываю добавление новой заметки")
-        print("Получил значение: \(object)")
+            print("Получил значение: \(object.1)")
         }
     }
     
