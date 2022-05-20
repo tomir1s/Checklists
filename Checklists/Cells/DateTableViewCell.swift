@@ -8,6 +8,9 @@
 import UIKit
 
 class DateTableViewCell: UITableViewCell {
+    
+    var onDateChange : ((Date) -> Void)?
+    
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -21,5 +24,8 @@ class DateTableViewCell: UITableViewCell {
 
        
     }
-
+    @IBAction func didChangeDate(_ sender: UIDatePicker) {
+        onDateChange?(sender.date)
+    }
+    
 }

@@ -8,6 +8,9 @@
 import UIKit
 
 class TextFieldTableViewCell: UITableViewCell {
+    
+    var textFieldValueOnChange: ((String) -> Void)?
+    
     @IBOutlet weak var addItemTextField: UITextField!
     
     override func awakeFromNib() {
@@ -21,6 +24,9 @@ class TextFieldTableViewCell: UITableViewCell {
     }
 
     @IBAction func didTextFieldChange(_ sender: UITextField) {
-        print(sender.text)
+        if let text = sender.text {
+            print(text)
+        textFieldValueOnChange?(text)
+        }
     }
 }

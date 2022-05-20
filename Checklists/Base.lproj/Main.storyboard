@@ -118,7 +118,7 @@
                     <navigationItem key="navigationItem" title="Birthdays" largeTitleDisplayMode="never" id="eov-ct-0qu">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Jh9-Uf-U3q">
                             <connections>
-                                <segue destination="EPb-O1-b04" kind="show" id="H8b-Em-4DR"/>
+                                <segue destination="EPb-O1-b04" kind="show" identifier="JumpToAddNewNote" id="H8b-Em-4DR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -210,6 +210,9 @@
                                             <date key="date" timeIntervalSinceReferenceDate="672579262.53671706">
                                                 <!--2022-04-25 11:34:22 +0000-->
                                             </date>
+                                            <connections>
+                                                <action selector="didChangeDate:" destination="Yyv-47-QNN" eventType="valueChanged" id="bZK-ku-sVS"/>
+                                            </connections>
                                         </datePicker>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeH-nu-5Yi">
                                             <rect key="frame" x="36" y="19" width="71" height="63"/>
@@ -275,7 +278,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="76P-d7-wEm"/>
+        <segue reference="H8b-Em-4DR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Birthdays" width="36" height="36"/>

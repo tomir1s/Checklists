@@ -11,11 +11,13 @@ class AddItemTableViewController: UITableViewController {
     
     
     var item: ChecklistItem?
+    
+    var groupTitle : String?
     var textFieldValue: String = ""
     var switchValue: Bool = false
     var dueDateValue: Date?
+ 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         // Uncomment the following line to preserve selection between presentations
@@ -50,13 +52,18 @@ class AddItemTableViewController: UITableViewController {
             if let item = item {
                 cell.addItemTextField.text = item.name
             }
+            cell.textFieldValueOnChange = { (text: String) -> Void in
+                print("i received \(text)")
+                self.textFieldValue = text
+            }
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SwitchCell", for: indexPath) as! SwitchTableViewCell
             cell.switchRemind.setOn(item?.remindMe ?? false, animated: true)
-            cell.onSwitchChange = { [weak self] in
+            cell.onSwitchChange = { (value: Bool) in
                 print("я внутри клоужера")
-                self?.item?.remindMe = cell.switchRemind.isOn
+                self.switchValue = value
+                self.item?.remindMe = cell.switchRemind.isOn
                 tableView.reloadData()
             }
             return cell
@@ -66,15 +73,19 @@ class AddItemTableViewController: UITableViewController {
             {
             cell.datePicker.setDate(date, animated: true)
             }
-         
+            cell.onDateChange = { (date: Date) -> Void in
+                self.dueDateValue = date
+            }
             return cell
         }
     }
     
     @IBAction func didTapDoneButton(_ sender: Any) {
         let newItem = ChecklistItem(isChecked: false, name: textFieldValue, remindMe: switchValue, dueDate: dueDateValue)
-        let object: (ChecklistItem, String) = (newItem, "Birthdays")
+        let object: (ChecklistItem, String) = (newItem, groupTitle ?? "No Category")
         NotificationCenter.default.post(name: .noteHasBeenCreated, object: object)
+        print(newItem)
+        navigationController?.popToRootViewController(animated: true)
     }
     // create object - тип объекта Tuple: (ChecklistItem, String)
     // заполнить объект - забрать y ячеек их значения

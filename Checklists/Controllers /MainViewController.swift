@@ -41,9 +41,15 @@ class MainViewController: UITableViewController, GroupDetailsProtocol {
         if let object = notification.object as? (ChecklistItem, String) {
         print("Обрабатываю добавление новой заметки")
             print("Получил значение: \(object.1)")
+            for (index, group) in groups.enumerated() {
+                if group.title == object.1 {
+                    groups [index].items.append(object.0)
+                    tableView.reloadData()
+            print(group.items)
+                }
+            }
         }
     }
-    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return groups.count
@@ -63,6 +69,7 @@ class MainViewController: UITableViewController, GroupDetailsProtocol {
         if segue.identifier == "MainToGroupDetails",
         let vc = segue.destination as? GroupDetailsTableViewController,
         let indexPath = tableView.indexPathForSelectedRow {
+            vc.title = groups[indexPath.row] .title
         vc.group = groups[indexPath.row]        
         vc.delegate = self
                 }

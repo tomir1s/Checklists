@@ -57,6 +57,11 @@ class GroupDetailsTableViewController: UITableViewController {
             vc.title = "Edit item"
             vc.item = group.items[indexPath.row]
         }
+        
+        if segue.identifier == "JumpToAddNewNote" ,
+           let vc = segue.destination as? AddItemTableViewController {
+            vc.groupTitle = group.title
+        }
     
     }
     
@@ -75,5 +80,5 @@ class GroupDetailsTableViewController: UITableViewController {
           
           delegate?.didDeleteItem(at: indexPath.row , with: group.title)
      }
-      
+   
 }
